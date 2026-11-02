@@ -1,8 +1,15 @@
 <?php
+require_once __DIR__ . '/classes/Product.php';
+
 $productsFile = __DIR__ . '/data/products.json';
+/** @var Product[] $products */
 $products = [];
+
 if (file_exists($productsFile)) {
-    $products = json_decode(file_get_contents($productsFile), true) ?: [];
+    $productsData = json_decode(file_get_contents($productsFile), true) ?: [];
+    foreach ($productsData as $item) {
+        $products[] = Product::fromArray($item);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -208,24 +215,29 @@ if (file_exists($productsFile)) {
             <!-- Product Grid -->
             <div id="product-container" class="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1">
                 <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $item): 
-                        $detailId = 'detail-' . strtolower(preg_replace('/\s+/', '-', $item['name']));
-                        $bgClass = !empty($item['bg']) ? $item['bg'] : 'bg-[#f7f5ed]';
-                    ?>
-                    <article class="flex min-h-[260px] flex-col items-start border border-line <?= htmlspecialchars($bgClass) ?> p-6 max-[760px]:min-h-[230px]">
-                        <div class="mb-[27px] flex w-full items-center justify-between">
-                            <img src="<?= htmlspecialchars($item['image']) ?>" alt="Foto kopi <?= htmlspecialchars($item['name']) ?>"
+                    <?php foreach ($products as $product): ?>
+                    <article class="flex min-h-[280px] flex-col items-start border border-line <?= htmlspecialchars($product->getBg()) ?> p-6 max-[760px]:min-h-[230px]">
+                        <div class="mb-5 flex w-full items-center justify-between">
+                            <img src="<?= htmlspecialchars($product->getImage()) ?>" alt="Foto kopi <?= htmlspecialchars($product->getName()) ?>"
                                 class="size-12 rounded-full object-cover">
-                            <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]"><?= htmlspecialchars($item['class']) ?></span>
+                            <div class="text-right">
+                                <span class="block text-[9px] uppercase tracking-[0.12em] text-[#827568]"><?= htmlspecialchars($product->getCategory()) ?></span>
+                                <span class="text-[12px] font-semibold text-coffee"><?= htmlspecialchars($product->getFormattedPrice()) ?></span>
+                            </div>
                         </div>
-                        <h3 class="mb-2 font-serif text-[24px] font-medium"><?= htmlspecialchars($item['name']) ?></h3>
+                        <h3 class="mb-1 font-serif text-[24px] font-medium"><?= htmlspecialchars($product->getName()) ?></h3>
+                        <?php if ($product->getOrigin()): ?>
+                        <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.08em] text-[#8c6848]">
+                            <?= htmlspecialchars($product->getOrigin()) ?>
+                        </p>
+                        <?php endif; ?>
                         <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
-                            <?= htmlspecialchars($item['description']) ?>
+                            <?= htmlspecialchars($product->getDescription()) ?>
                         </p>
-                        <p id="<?= $detailId ?>" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
-                            <?= htmlspecialchars($item['detail']) ?>
+                        <p id="<?= htmlspecialchars($product->getDetailId()) ?>" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
+                            <?= htmlspecialchars($product->getDetail()) ?>
                         </p>
-                        <button type="button" aria-expanded="false" aria-controls="<?= $detailId ?>" data-toggle
+                        <button type="button" aria-expanded="false" aria-controls="<?= htmlspecialchars($product->getDetailId()) ?>" data-toggle
                             class="mt-auto flex w-full cursor-pointer items-center justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
                             <span>Pelajari lebih lanjut</span>
                             <i data-lucide="arrow-up-right" class="size-3.5 transition-transform duration-200"></i>
