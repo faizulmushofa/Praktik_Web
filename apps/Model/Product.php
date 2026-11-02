@@ -13,16 +13,6 @@ class Product
     private string $origin;
 
     
-      @param string
-      @param int
-      @param string
-      @param string
-      @param string
-      @param string
-      @param string
-      @param string
-      @param string
-     
     public function __construct(
         string $name,
         int $price = 0,
@@ -90,19 +80,17 @@ class Product
         return $this->origin;
     }
 
-   
     public function getFormattedPrice(): string
     {
         return 'Rp ' . number_format($this->price, 0, ',', '.');
     }
 
-   
+    
     public function getDetailId(): string
     {
         $slug = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $this->name), '-'));
         return 'detail-' . $slug;
     }
-
     
     public static function fromArray(array $data): self
     {
