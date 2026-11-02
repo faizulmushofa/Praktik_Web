@@ -1,3 +1,10 @@
+<?php
+$productsFile = __DIR__ . '/data/products.json';
+$products = [];
+if (file_exists($productsFile)) {
+    $products = json_decode(file_get_contents($productsFile), true) ?: [];
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -200,7 +207,40 @@
 
             <!-- Product Grid -->
             <div id="product-container" class="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1">
-                <!-- Data dimuat secara dinamis via script.js -->
+                <?php if (!empty($products)): ?>
+                    <?php foreach ($products as $item): 
+                        $detailId = 'detail-' . strtolower(preg_replace('/\s+/', '-', $item['name']));
+                        $bgClass = !empty($item['bg']) ? $item['bg'] : 'bg-[#f7f5ed]';
+                    ?>
+                    <article class="flex min-h-[260px] flex-col items-start border border-line <?= htmlspecialchars($bgClass) ?> p-6 max-[760px]:min-h-[230px]">
+                        <div class="mb-[27px] flex w-full items-center justify-between">
+                            <img src="<?= htmlspecialchars($item['image']) ?>" alt="Foto kopi <?= htmlspecialchars($item['name']) ?>"
+                                class="size-12 rounded-full object-cover">
+                            <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]"><?= htmlspecialchars($item['class']) ?></span>
+                        </div>
+                        <h3 class="mb-2 font-serif text-[24px] font-medium"><?= htmlspecialchars($item['name']) ?></h3>
+                        <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
+                            <?= htmlspecialchars($item['description']) ?>
+                        </p>
+                        <p id="<?= $detailId ?>" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
+                            <?= htmlspecialchars($item['detail']) ?>
+                        </p>
+                        <button type="button" aria-expanded="false" aria-controls="<?= $detailId ?>" data-toggle
+                            class="mt-auto flex w-full cursor-pointer items-center justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
+                            <span>Pelajari lebih lanjut</span>
+                            <i data-lucide="arrow-up-right" class="size-3.5 transition-transform duration-200"></i>
+                        </button>
+                    </article>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col-span-3 flex flex-col items-center justify-center gap-3 rounded border border-line bg-[#fbf8f2] p-8 text-center">
+                        <i data-lucide="alert-triangle" class="size-8 text-[#936a49]"></i>
+                        <div class="space-y-1">
+                            <h4 class="font-serif text-lg font-medium text-ink">Gagal Memuat Produk</h4>
+                            <p class="text-xs text-muted">Data produk tidak ditemukan atau kosong.</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </section>
 
