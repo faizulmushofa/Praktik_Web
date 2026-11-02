@@ -8,6 +8,7 @@
         content="Kopi Nusantara menghadirkan biji kopi pilihan dari berbagai daerah Indonesia, diproses dengan penuh perhatian.">
     <title>Kopi Nusantara — Cerita Baik dari Setiap Seduhan</title>
     <link rel="stylesheet" href="dist/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="bg-paper font-sans leading-[1.65] text-ink">
@@ -19,8 +20,8 @@
         <!-- Brand -->
         <a href="#beranda" aria-label="Kopi Nusantara, beranda"
             class="inline-flex items-center gap-2.5 whitespace-nowrap text-[16px] tracking-[-0.04em] text-ink no-underline">
-            <span aria-hidden="true" class="grid size-[37px] place-items-center rounded-full bg-[#ede4d7] text-[18px]">
-                ☕
+            <span aria-hidden="true" class="grid size-[37px] place-items-center rounded-full bg-[#ede4d7]">
+                <i data-lucide="coffee" class="size-4.5 text-coffee"></i>
             </span>
             <span>
                 Kopi <strong class="font-bold">Nusantara</strong>
@@ -29,10 +30,8 @@
 
         <!-- Hamburger Button -->
         <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu navigasi"
-            class="hidden max-[760px]:flex flex-col justify-center items-center gap-1.5 size-9 rounded border border-line bg-[#fcfaf6] p-2 cursor-pointer">
-            <span class="h-0.5 w-5 bg-ink"></span>
-            <span class="h-0.5 w-5 bg-ink"></span>
-            <span class="h-0.5 w-5 bg-ink"></span>
+            class="hidden max-[760px]:flex justify-center items-center size-9 rounded border border-line bg-[#fcfaf6] cursor-pointer text-ink">
+            <i data-lucide="menu" class="size-5"></i>
         </button>
 
         <!-- Navigation -->
@@ -67,9 +66,9 @@
 
         <!-- Header Button -->
         <a href="#produk"
-            class="inline-flex items-center justify-center gap-3.5 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark max-[760px]:hidden">
+            class="inline-flex items-center justify-center gap-2 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark max-[760px]:hidden">
             Jelajahi Produk
-            <span aria-hidden="true">↗</span>
+            <i data-lucide="arrow-up-right" class="size-3.5"></i>
         </a>
     </header>
 
@@ -99,9 +98,9 @@
                 <div
                     class="flex flex-wrap items-center gap-6 max-[390px]:flex-col max-[390px]:items-start max-[390px]:gap-[15px]">
                     <a href="#produk"
-                        class="inline-flex items-center justify-center gap-3.5 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark">
+                        class="inline-flex items-center justify-center gap-2 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark">
                         Temukan Kopi Kami
-                        <span aria-hidden="true">→</span>
+                        <i data-lucide="arrow-right" class="size-3.5"></i>
                     </a>
 
                     <a href="#tentang"
@@ -111,7 +110,7 @@
                 </div>
 
                 <div class="mt-11 flex items-center gap-2.5 text-[10px] uppercase tracking-[0.08em] text-[#81786e]">
-                    <span class="text-[16px] text-[#a87b52]" aria-hidden="true">✳</span>
+                    <i data-lucide="sparkle" class="size-3.5 text-[#a87b52]"></i>
                     <span>100% biji kopi pilihan Indonesia</span>
                 </div>
             </div>
@@ -147,8 +146,8 @@
                     membagikan karakter unik setiap daerah.
                 </p>
                 <a href="#kontak"
-                    class="border-b border-[#c5b5a4] pb-[3px] text-[12px] font-semibold text-coffee no-underline transition-colors duration-200 hover:text-[#a1663c]">
-                    Mari berkenalan →
+                    class="inline-flex items-center gap-1.5 border-b border-[#c5b5a4] pb-[3px] text-[12px] font-semibold text-coffee no-underline transition-colors duration-200 hover:text-[#a1663c]">
+                    Mari berkenalan <i data-lucide="arrow-right" class="size-3"></i>
                 </a>
             </div>
         </section>
@@ -199,69 +198,9 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1">
-                <!-- Excelsa -->
-                <article
-                    class="flex min-h-[260px] flex-col items-start border border-line bg-[#fbf8f2] p-6 max-[760px]:min-h-[230px]">
-                    <div class="mb-[27px] flex w-full items-center justify-between">
-                        <img src="../image/excelsa.jpg" alt="Foto kopi Excelsa"
-                            class="size-12 rounded-full object-cover">
-                        <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]">Nusantara</span>
-                    </div>
-                    <h3 class="mb-2 font-serif text-[24px] font-medium">Excelsa</h3>
-                    <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
-                        Aroma buah yang khas dengan sentuhan nangka dan rasa yang berlapis.
-                    </p>
-                    <p id="detail-excelsa" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
-                        Cocok untuk penikmat aroma buah unik. Seduh dengan metode pour-over untuk menonjolkan karakter rasanya.
-                    </p>
-                    <button type="button" aria-expanded="false" aria-controls="detail-excelsa" data-toggle
-                        class="mt-auto flex w-full cursor-pointer justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
-                        Pelajari lebih lanjut <span aria-hidden="true">↗</span>
-                    </button>
-                </article>
-
-                <!-- Robusta -->
-                <article
-                    class="flex min-h-[260px] flex-col items-start border border-line bg-[#f4eee4] p-6 max-[760px]:min-h-[230px]">
-                    <div class="mb-[27px] flex w-full items-center justify-between">
-                        <img src="../image/robusta.jpg" alt="Foto kopi Robusta"
-                            class="size-12 rounded-full object-cover">
-                        <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]">Pilihan lokal</span>
-                    </div>
-                    <h3 class="mb-2 font-serif text-[24px] font-medium">Robusta Lokal</h3>
-                    <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
-                        Karakter kuat dan mantap, dengan aroma khas dari perkebunan lokal.
-                    </p>
-                    <p id="detail-robusta" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
-                        Cocok untuk penikmat kopi pekat dan olahan susu. Coba seduh dengan metode tubruk atau French press.
-                    </p>
-                    <button type="button" aria-expanded="false" aria-controls="detail-robusta" data-toggle
-                        class="mt-auto flex w-full cursor-pointer justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
-                        Pelajari lebih lanjut <span aria-hidden="true">↗</span>
-                    </button>
-                </article>
-
-                <!-- Arabica -->
-                <article
-                    class="flex min-h-[260px] flex-col items-start border border-line bg-[#f7f5ed] p-6 max-[760px]:min-h-[230px]">
-                    <div class="mb-[27px] flex w-full items-center justify-between">
-                        <img src="../image/arabika.jpg" alt="Foto kopi Arabica"
-                            class="size-12 rounded-full object-cover">
-                        <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]">Nusantara</span>
-                    </div>
-                    <h3 class="mb-2 font-serif text-[24px] font-medium">Arabica</h3>
-                    <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
-                        Rasa lembut, aroma kompleks, dan keasaman seimbang untuk dinikmati.
-                    </p>
-                    <p id="detail-arabica" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
-                        Cocok untuk penikmat seduhan manual bernuansa floral dan fruity dengan rasa asam yang menyegarkan.
-                    </p>
-                    <button type="button" aria-expanded="false" aria-controls="detail-arabica" data-toggle
-                        class="mt-auto flex w-full cursor-pointer justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
-                        Pelajari lebih lanjut <span aria-hidden="true">↗</span>
-                    </button>
-                </article>
+            <!-- Product Grid -->
+            <div id="product-container" class="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1">
+                <!-- Data dimuat secara dinamis via script.js -->
             </div>
         </section>
 
@@ -279,8 +218,8 @@
                 </h2>
             </div>
             <a href="mailto:halo@kopinusantara.id"
-                class="inline-flex shrink-0 items-center justify-center gap-3.5 rounded-[3px] border border-[#e3d2be] bg-transparent px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-[#fffaf3] no-underline transition duration-200 hover:bg-white/10">
-                Hubungi kami <span aria-hidden="true">↗</span>
+                class="inline-flex shrink-0 items-center justify-center gap-2 rounded-[3px] border border-[#e3d2be] bg-transparent px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-[#fffaf3] no-underline transition duration-200 hover:bg-white/10">
+                Hubungi kami <i data-lucide="arrow-up-right" class="size-3.5"></i>
             </a>
         </section>
     </main>
@@ -290,8 +229,8 @@
         class="flex items-center justify-between gap-5 px-[clamp(22px,7vw,108px)] py-6 text-[#83796e] max-[760px]:flex-wrap">
         <a href="#beranda"
             class="inline-flex items-center gap-2.5 whitespace-nowrap text-[16px] tracking-[-0.04em] text-ink no-underline">
-            <span class="grid size-[37px] place-items-center rounded-full bg-[#ede4d7] text-[18px]" aria-hidden="true">
-                ☕
+            <span class="grid size-[37px] place-items-center rounded-full bg-[#ede4d7]" aria-hidden="true">
+                <i data-lucide="coffee" class="size-4.5 text-coffee"></i>
             </span>
             <span>
                 Kopi <strong class="font-bold">Nusantara</strong>

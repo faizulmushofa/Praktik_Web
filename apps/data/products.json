@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "Excelsa",
+    "image": "../image/excelsa.jpg",
+    "class": "Nusantara",
+    "bg": "bg-[#fbf8f2]",
+    "description": "Aroma buah yang khas dengan sentuhan nangka dan rasa yang berlapis.",
+    "detail": "Cocok untuk penikmat aroma buah unik. Seduh dengan metode pour-over untuk menonjolkan karakter rasanya."
+  },
+  {
+    "id": "2",
+    "name": "Robusta Lokal",
+    "image": "../image/robusta.jpg",
+    "class": "Pilihan lokal",
+    "bg": "bg-[#f4eee4]",
+    "description": "Karakter kuat dan mantap, dengan aroma khas dari perkebunan lokal.",
+    "detail": "Cocok untuk penikmat kopi pekat dan olahan susu. Coba seduh dengan metode tubruk atau French press."
+  },
+  {
+    "id": "3",
+    "name": "Arabica",
+    "image": "../image/arabika.jpg",
+    "class": "Nusantara",
+    "bg": "bg-[#f7f5ed]",
+    "description": "Rasa lembut, aroma kompleks, dan keasaman seimbang untuk dinikmati.",
+    "detail": "Cocok untuk penikmat seduhan manual bernuansa floral dan fruity dengan rasa asam yang menyegarkan."
+  }
+]
