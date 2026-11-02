@@ -2,6 +2,8 @@
   {
     "id": "1",
     "name": "Excelsa",
+    "price": 45000,
+    "origin": "Wonosalam, Jombang",
     "image": "../image/excelsa.jpg",
     "class": "Nusantara",
     "bg": "bg-[#fbf8f2]",
@@ -11,6 +13,8 @@
   {
     "id": "2",
     "name": "Robusta Lokal",
+    "price": 38000,
+    "origin": "Dampit, Malang",
     "image": "../image/robusta.jpg",
     "class": "Pilihan lokal",
     "bg": "bg-[#f4eee4]",
@@ -20,6 +24,8 @@
   {
     "id": "3",
     "name": "Arabica",
+    "price": 52000,
+    "origin": "Gayo, Aceh",
     "image": "../image/arabika.jpg",
     "class": "Nusantara",
     "bg": "bg-[#f7f5ed]",
