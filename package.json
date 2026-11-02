@@ -2,8 +2,8 @@
   "name": "praktik-web",
   "version": "1.0.0",
   "scripts": {
-    "build-css": "npx @tailwindcss/cli -i ./apps/style.css -o ./apps/dist/output.css",
-    "watch-css": "npx @tailwindcss/cli -i ./apps/style.css -o ./apps/dist/output.css --watch"
+    "build-css": "npx @tailwindcss/cli -i ./apps/css/style.css -o ./apps/dist/output.css",
+    "watch-css": "npx @tailwindcss/cli -i ./apps/css/style.css -o ./apps/dist/output.css --watch"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.0",

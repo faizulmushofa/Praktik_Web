@@ -27,30 +27,38 @@
             </span>
         </a>
 
+        <!-- Hamburger Button -->
+        <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu navigasi"
+            class="hidden max-[760px]:flex flex-col justify-center items-center gap-1.5 size-9 rounded border border-line bg-[#fcfaf6] p-2 cursor-pointer">
+            <span class="h-0.5 w-5 bg-ink"></span>
+            <span class="h-0.5 w-5 bg-ink"></span>
+            <span class="h-0.5 w-5 bg-ink"></span>
+        </button>
+
         <!-- Navigation -->
-        <nav aria-label="Navigasi utama" class="max-[760px]:order-3 max-[760px]:w-full max-[760px]:overflow-x-auto">
-            <ul class="flex list-none gap-[clamp(18px,3vw,42px)] max-[760px]:justify-between max-[760px]:gap-[15px]">
+        <nav id="main-nav" aria-label="Navigasi utama" class="max-[760px]:hidden max-[760px]:order-3 max-[760px]:w-full max-[760px]:border-t max-[760px]:border-line max-[760px]:pt-3">
+            <ul class="flex list-none gap-[clamp(18px,3vw,42px)] max-[760px]:flex-col max-[760px]:gap-3">
                 <li>
                     <a href="#beranda"
-                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:block max-[760px]:py-1">
                         Beranda
                     </a>
                 </li>
                 <li>
                     <a href="#tentang"
-                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:block max-[760px]:py-1">
                         Tentang Kami
                     </a>
                 </li>
                 <li>
                     <a href="#produk"
-                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:block max-[760px]:py-1">
                         Produk
                     </a>
                 </li>
                 <li>
                     <a href="#kontak"
-                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:block max-[760px]:py-1">
                         Kontak
                     </a>
                 </li>
@@ -59,7 +67,7 @@
 
         <!-- Header Button -->
         <a href="#produk"
-            class="inline-flex items-center justify-center gap-3.5 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark max-[390px]:px-2.5 max-[390px]:py-[9px] max-[390px]:text-[10px]">
+            class="inline-flex items-center justify-center gap-3.5 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark max-[760px]:hidden">
             Jelajahi Produk
             <span aria-hidden="true">↗</span>
         </a>
@@ -204,10 +212,13 @@
                     <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
                         Aroma buah yang khas dengan sentuhan nangka dan rasa yang berlapis.
                     </p>
-                    <a href="#kontak" aria-label="Tanya tentang kopi Excelsa"
-                        class="mt-auto flex w-full justify-between border-t border-[rgba(92,72,52,0.18)] pt-3 text-[10px] font-semibold text-coffee no-underline">
+                    <p id="detail-excelsa" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
+                        Cocok untuk penikmat aroma buah unik. Seduh dengan metode pour-over untuk menonjolkan karakter rasanya.
+                    </p>
+                    <button type="button" aria-expanded="false" aria-controls="detail-excelsa" data-toggle
+                        class="mt-auto flex w-full cursor-pointer justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
                         Pelajari lebih lanjut <span aria-hidden="true">↗</span>
-                    </a>
+                    </button>
                 </article>
 
                 <!-- Robusta -->
@@ -222,10 +233,13 @@
                     <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
                         Karakter kuat dan mantap, dengan aroma khas dari perkebunan lokal.
                     </p>
-                    <a href="#kontak" aria-label="Tanya tentang kopi Robusta Lokal"
-                        class="mt-auto flex w-full justify-between border-t border-[rgba(92,72,52,0.18)] pt-3 text-[10px] font-semibold text-coffee no-underline">
+                    <p id="detail-robusta" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
+                        Cocok untuk penikmat kopi pekat dan olahan susu. Coba seduh dengan metode tubruk atau French press.
+                    </p>
+                    <button type="button" aria-expanded="false" aria-controls="detail-robusta" data-toggle
+                        class="mt-auto flex w-full cursor-pointer justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
                         Pelajari lebih lanjut <span aria-hidden="true">↗</span>
-                    </a>
+                    </button>
                 </article>
 
                 <!-- Arabica -->
@@ -240,10 +254,13 @@
                     <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
                         Rasa lembut, aroma kompleks, dan keasaman seimbang untuk dinikmati.
                     </p>
-                    <a href="#kontak" aria-label="Tanya tentang kopi Arabica"
-                        class="mt-auto flex w-full justify-between border-t border-[rgba(92,72,52,0.18)] pt-3 text-[10px] font-semibold text-coffee no-underline">
+                    <p id="detail-arabica" class="mb-4 hidden text-[11px] leading-[1.75] text-muted">
+                        Cocok untuk penikmat seduhan manual bernuansa floral dan fruity dengan rasa asam yang menyegarkan.
+                    </p>
+                    <button type="button" aria-expanded="false" aria-controls="detail-arabica" data-toggle
+                        class="mt-auto flex w-full cursor-pointer justify-between border-t border-[rgba(92,72,52,0.18)] bg-transparent pt-3 text-left text-[10px] font-semibold text-coffee">
                         Pelajari lebih lanjut <span aria-hidden="true">↗</span>
-                    </a>
+                    </button>
                 </article>
             </div>
         </section>
@@ -286,6 +303,7 @@
         <span class="text-[10px]">© 2026 Kopi Nusantara</span>
     </footer>
 
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
