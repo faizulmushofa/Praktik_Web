@@ -7,133 +7,285 @@
     <meta name="description"
         content="Kopi Nusantara menghadirkan biji kopi pilihan dari berbagai daerah Indonesia, diproses dengan penuh perhatian.">
     <title>Kopi Nusantara — Cerita Baik dari Setiap Seduhan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/output.css">
 </head>
 
-<body>
-    <header class="site-header">
-        <a class="brand" href="#beranda" aria-label="Kopi Nusantara, beranda">
-            <span class="brand-mark" aria-hidden="true">☕</span>
-            <span>Kopi <strong>Nusantara</strong></span>
+<body class="bg-paper font-sans leading-[1.65] text-ink">
+
+    <!-- HEADER -->
+    <header
+        class="flex min-h-[82px] items-center justify-between gap-7 border-b border-line bg-paper px-[clamp(22px,7vw,108px)] max-[760px]:flex-wrap max-[760px]:gap-3 max-[760px]:py-[14px]">
+
+        <!-- Brand -->
+        <a href="#beranda" aria-label="Kopi Nusantara, beranda"
+            class="inline-flex items-center gap-2.5 whitespace-nowrap text-[16px] tracking-[-0.04em] text-ink no-underline">
+            <span aria-hidden="true" class="grid size-[37px] place-items-center rounded-full bg-[#ede4d7] text-[18px]">
+                ☕
+            </span>
+            <span>
+                Kopi <strong class="font-bold">Nusantara</strong>
+            </span>
         </a>
 
-        <nav aria-label="Navigasi utama">
-            <ul>
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#produk">Produk</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+        <!-- Navigation -->
+        <nav aria-label="Navigasi utama" class="max-[760px]:order-3 max-[760px]:w-full max-[760px]:overflow-x-auto">
+            <ul class="flex list-none gap-[clamp(18px,3vw,42px)] max-[760px]:justify-between max-[760px]:gap-[15px]">
+                <li>
+                    <a href="#beranda"
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        Beranda
+                    </a>
+                </li>
+                <li>
+                    <a href="#tentang"
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        Tentang Kami
+                    </a>
+                </li>
+                <li>
+                    <a href="#produk"
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        Produk
+                    </a>
+                </li>
+                <li>
+                    <a href="#kontak"
+                        class="text-[13px] text-[#5f574e] no-underline transition-colors duration-200 hover:text-[#a1663c] max-[760px]:whitespace-nowrap max-[760px]:text-[11px]">
+                        Kontak
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <a class="button button-small" href="#produk">Jelajahi Produk <span aria-hidden="true">↗</span></a>
+        <!-- Header Button -->
+        <a href="#produk"
+            class="inline-flex items-center justify-center gap-3.5 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark max-[390px]:px-2.5 max-[390px]:py-[9px] max-[390px]:text-[10px]">
+            Jelajahi Produk
+            <span aria-hidden="true">↗</span>
+        </a>
     </header>
 
     <main>
-        <section class="hero" id="beranda">
-            <div class="hero-copy">
-                <p class="eyebrow"><span></span> Dari kebun lokal, untuk semua</p>
-                <h1>Merayakan cerita <em>di setiap</em> seduhan.</h1>
-                <p class="hero-intro">Kami membawa kekayaan rasa kopi Indonesia ke dalam cangkir Anda—dengan biji
-                    pilihan, proses yang bertanggung jawab, dan penghormatan pada para petani.</p>
-                <div class="hero-actions">
-                    <a class="button" href="#produk">Temukan Kopi Kami <span aria-hidden="true">→</span></a>
-                    <a class="text-link" href="#tentang">Kenali perjalanan kami</a>
+        <!-- HERO -->
+        <section id="beranda"
+            class="grid min-h-[570px] grid-cols-2 items-center gap-[8%] bg-cream px-[clamp(22px,10vw,150px)] pb-[76px] pt-[65px] max-[760px]:grid-cols-1 max-[760px]:gap-[38px] max-[760px]:pb-[55px] max-[760px]:pt-[58px]">
+
+            <div class="max-w-[490px]">
+                <p class="mb-5 flex items-center gap-[9px] text-[10px] font-bold uppercase tracking-[0.16em] text-[#8c6848]">
+                    <span class="h-px w-[19px] bg-[#a77950]"></span>
+                    Dari kebun lokal, untuk semua
+                </p>
+
+                <h1
+                    class="mb-5 max-w-[500px] font-serif text-[clamp(42px,5.2vw,69px)] font-medium leading-[1.12] tracking-[-0.045em] max-[390px]:text-[40px]">
+                    Merayakan cerita
+                    <em class="font-medium not-italic text-[#936a49]">di setiap</em>
+                    seduhan.
+                </h1>
+
+                <p class="mb-[26px] max-w-[440px] text-[14px] leading-[1.85] text-muted">
+                    Kami membawa kekayaan rasa kopi Indonesia ke dalam cangkir Anda—dengan biji pilihan, proses yang
+                    bertanggung jawab, dan penghormatan pada para petani.
+                </p>
+
+                <div
+                    class="flex flex-wrap items-center gap-6 max-[390px]:flex-col max-[390px]:items-start max-[390px]:gap-[15px]">
+                    <a href="#produk"
+                        class="inline-flex items-center justify-center gap-3.5 rounded-[3px] border border-coffee bg-coffee px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-coffee-dark">
+                        Temukan Kopi Kami
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="#tentang"
+                        class="border-b border-[#c5b5a4] pb-[3px] text-[12px] font-semibold text-coffee no-underline transition-colors duration-200 hover:text-[#a1663c]">
+                        Kenali perjalanan kami
+                    </a>
                 </div>
-                <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span><span>100% biji kopi pilihan
-                        Indonesia</span></div>
-            </div>
-            <div class="hero-art">
-                <img src="../image/kopi-nusantara.jpg"
-                    alt="Foto kopi Nusantara">
-                <span class="art-caption">DIRACIK DENGAN HATI · SEJAK 2018</span>
-            </div>
-        </section>
 
-        <section class="about section-wrap" id="tentang">
-            <div class="section-heading">
-                <p class="eyebrow">Tentang Kopi Nusantara</p>
-                <h2>Lebih dari sekadar kopi.<br><em>Sebuah hubungan.</em></h2>
-            </div>
-            <div class="about-copy">
-                <p>Kopi Nusantara lahir dari kecintaan pada kopi Indonesia dan orang-orang di baliknya. Kami bekerja
-                    bersama petani lokal untuk memilih biji terbaik, menjaga kualitas dari kebun hingga cangkir, dan
-                    membagikan karakter unik setiap daerah.</p>
-                <a class="text-link" href="#kontak">Mari berkenalan <span aria-hidden="true">→</span></a>
-            </div>
-        </section>
-
-        <section class="values" aria-label="Keunggulan Kopi Nusantara">
-            <div><span class="value-number">01</span>
-                <h3>Asal yang jelas</h3>
-                <p>Setiap biji punya cerita dan daerah asal yang kami kenal.</p>
-            </div>
-            <div><span class="value-number">02</span>
-                <h3>Dipilih dengan teliti</h3>
-                <p>Kualitas rasa dijaga mulai dari panen hingga proses sangrai.</p>
-            </div>
-            <div><span class="value-number">03</span>
-                <h3>Bertumbuh bersama</h3>
-                <p>Kemitraan yang saling mendukung dengan petani Indonesia.</p>
-            </div>
-        </section>
-
-        <section class="products section-wrap" id="produk">
-            <div class="products-heading">
-                <div>
-                    <p class="eyebrow">Kenali karakter rasanya</p>
-                    <h2>Biji pilihan, <em>cerita berbeda.</em></h2>
+                <div class="mt-11 flex items-center gap-2.5 text-[10px] uppercase tracking-[0.08em] text-[#81786e]">
+                    <span class="text-[16px] text-[#a87b52]" aria-hidden="true">✳</span>
+                    <span>100% biji kopi pilihan Indonesia</span>
                 </div>
-                <p>Dari rasa yang berani hingga seduhan yang lembut, temukan karakter kopi yang paling dekat dengan
-                    Anda.</p>
             </div>
-            <div class="product-grid">
-                <article class="product-card product-excelsa">
-                    <div class="product-top"><img class="product-icon"
-                            src="../image/excelsa.jpg"
-                            alt="Foto kopi Excelsa"><span class="origin">Nusantara</span></div>
-                    <h3>Excelsa</h3>
-                    <p>Aroma buah yang khas dengan sentuhan nangka dan rasa yang berlapis.</p>
-                    <a href="#kontak" aria-label="Tanya tentang kopi Excelsa">Pelajari lebih lanjut <span
-                            aria-hidden="true">↗</span></a>
-                </article>
-                <article class="product-card product-robusta">
-                    <div class="product-top"><img class="product-icon"
-                            src="../image/robusta.jpg"
-                            alt="Foto kopi Robusta"><span class="origin">Pilihan lokal</span></div>
-                    <h3>Robusta Lokal</h3>
-                    <p>Karakter kuat dan mantap, dengan aroma khas dari perkebunan lokal.</p>
-                    <a href="#kontak" aria-label="Tanya tentang kopi Robusta Lokal">Pelajari lebih lanjut <span
-                            aria-hidden="true">↗</span></a>
-                </article>
-                <article class="product-card product-arabica">
-                    <div class="product-top"><img class="product-icon"
-                            src="../image/arabika.jpg"
-                            alt="Foto kopi Arabica"><span class="origin">Nusantara</span></div>
-                    <h3>Arabica</h3>
-                    <p>Rasa lembut, aroma kompleks, dan keasaman seimbang untuk dinikmati.</p>
-                    <a href="#kontak" aria-label="Tanya tentang kopi Arabica">Pelajari lebih lanjut <span
-                            aria-hidden="true">↗</span></a>
-                </article>
+
+            <!-- Hero Image -->
+            <div class="relative min-h-[390px] overflow-hidden bg-[#e6d6c1] max-[760px]:min-h-[340px]">
+                <img src="../image/kopi-nusantara.jpg" alt="Foto secangkir kopi Nusantara"
+                    class="block h-[390px] w-full object-cover max-[760px]:h-[340px]">
+                <span class="absolute bottom-[19px] text-[8px] font-bold tracking-[0.17em] text-[#795f49]">
+                    DIRACIK DENGAN HATI · SEJAK 2018
+                </span>
             </div>
         </section>
 
-        <section class="contact" id="kontak">
+        <!-- ABOUT -->
+        <section id="tentang"
+            class="grid grid-cols-2 gap-[10%] px-[clamp(22px,10vw,150px)] pb-24 pt-[100px] max-[760px]:grid-cols-1 max-[760px]:gap-[23px] max-[760px]:pb-[65px] max-[760px]:pt-[68px]">
             <div>
-                <p class="eyebrow">Ada cerita yang ingin dibagi?</p>
-                <h2>Secangkir kopi selalu<br>punya awal yang baik.</h2>
+                <p class="mb-5 flex items-center gap-[9px] text-[10px] font-bold uppercase tracking-[0.16em] text-[#8c6848]">
+                    Tentang Kopi Nusantara
+                </p>
+                <h2 class="font-serif text-[clamp(34px,4vw,48px)] font-medium leading-[1.2] tracking-[-0.045em]">
+                    Lebih dari sekadar kopi.
+                    <br>
+                    <em class="font-medium not-italic text-[#936a49]">Sebuah hubungan.</em>
+                </h2>
             </div>
-            <a class="button button-light" href="mailto:halo@kopinusantara.id">Hubungi kami <span
-                    aria-hidden="true">↗</span></a>
+
+            <div class="max-w-[490px] self-end">
+                <p class="mb-[22px] text-[13px] leading-[1.9] text-muted">
+                    Kopi Nusantara lahir dari kecintaan pada kopi Indonesia dan orang-orang di baliknya. Kami bekerja
+                    bersama petani lokal untuk memilih biji terbaik, menjaga kualitas dari kebun hingga cangkir, dan
+                    membagikan karakter unik setiap daerah.
+                </p>
+                <a href="#kontak"
+                    class="border-b border-[#c5b5a4] pb-[3px] text-[12px] font-semibold text-coffee no-underline transition-colors duration-200 hover:text-[#a1663c]">
+                    Mari berkenalan →
+                </a>
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section aria-label="Keunggulan Kopi Nusantara"
+            class="grid grid-cols-3 gap-[38px] border-y border-line bg-[#fcfaf6] px-[clamp(22px,10vw,150px)] py-[38px] max-[760px]:grid-cols-1 max-[760px]:gap-[25px]">
+            <div class="relative pl-[39px]">
+                <span class="absolute left-0 top-0.5 font-serif text-[14px] text-[#a37b59]">01</span>
+                <h3 class="mb-1.5 font-serif text-[18px] font-medium">Asal yang jelas</h3>
+                <p class="mb-0 max-w-[270px] text-[11px] leading-[1.7] text-muted">
+                    Setiap biji punya cerita dan daerah asal yang kami kenal.
+                </p>
+            </div>
+
+            <div class="relative pl-[39px]">
+                <span class="absolute left-0 top-0.5 font-serif text-[14px] text-[#a37b59]">02</span>
+                <h3 class="mb-1.5 font-serif text-[18px] font-medium">Dipilih dengan teliti</h3>
+                <p class="mb-0 max-w-[270px] text-[11px] leading-[1.7] text-muted">
+                    Kualitas rasa dijaga mulai dari panen hingga proses sangrai.
+                </p>
+            </div>
+
+            <div class="relative pl-[39px]">
+                <span class="absolute left-0 top-0.5 font-serif text-[14px] text-[#a37b59]">03</span>
+                <h3 class="mb-1.5 font-serif text-[18px] font-medium">Bertumbuh bersama</h3>
+                <p class="mb-0 max-w-[270px] text-[11px] leading-[1.7] text-muted">
+                    Kemitraan yang saling mendukung dengan petani Indonesia.
+                </p>
+            </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="produk"
+            class="px-[clamp(22px,10vw,150px)] pb-[105px] pt-[100px] max-[760px]:pb-[70px] max-[760px]:pt-[70px]">
+            <div class="mb-9 flex items-end justify-between gap-[35px] max-[760px]:block">
+                <div>
+                    <p class="mb-[13px] flex items-center gap-[9px] text-[10px] font-bold uppercase tracking-[0.16em] text-[#8c6848]">
+                        Kenali karakter rasanya
+                    </p>
+                    <h2 class="m-0 font-serif text-[clamp(34px,4vw,48px)] font-medium leading-[1.2] tracking-[-0.045em]">
+                        Biji pilihan,
+                        <em class="font-medium not-italic text-[#936a49]">cerita berbeda.</em>
+                    </h2>
+                </div>
+                <p class="mb-1 max-w-[320px] text-[12px] leading-[1.8] text-muted max-[760px]:mt-4">
+                    Dari rasa yang berani hingga seduhan yang lembut, temukan karakter kopi yang paling dekat dengan Anda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1">
+                <!-- Excelsa -->
+                <article
+                    class="flex min-h-[260px] flex-col items-start border border-line bg-[#fbf8f2] p-6 max-[760px]:min-h-[230px]">
+                    <div class="mb-[27px] flex w-full items-center justify-between">
+                        <img src="../image/excelsa.jpg" alt="Foto kopi Excelsa"
+                            class="size-12 rounded-full object-cover">
+                        <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]">Nusantara</span>
+                    </div>
+                    <h3 class="mb-2 font-serif text-[24px] font-medium">Excelsa</h3>
+                    <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
+                        Aroma buah yang khas dengan sentuhan nangka dan rasa yang berlapis.
+                    </p>
+                    <a href="#kontak" aria-label="Tanya tentang kopi Excelsa"
+                        class="mt-auto flex w-full justify-between border-t border-[rgba(92,72,52,0.18)] pt-3 text-[10px] font-semibold text-coffee no-underline">
+                        Pelajari lebih lanjut <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                <!-- Robusta -->
+                <article
+                    class="flex min-h-[260px] flex-col items-start border border-line bg-[#f4eee4] p-6 max-[760px]:min-h-[230px]">
+                    <div class="mb-[27px] flex w-full items-center justify-between">
+                        <img src="../image/robusta.jpg" alt="Foto kopi Robusta"
+                            class="size-12 rounded-full object-cover">
+                        <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]">Pilihan lokal</span>
+                    </div>
+                    <h3 class="mb-2 font-serif text-[24px] font-medium">Robusta Lokal</h3>
+                    <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
+                        Karakter kuat dan mantap, dengan aroma khas dari perkebunan lokal.
+                    </p>
+                    <a href="#kontak" aria-label="Tanya tentang kopi Robusta Lokal"
+                        class="mt-auto flex w-full justify-between border-t border-[rgba(92,72,52,0.18)] pt-3 text-[10px] font-semibold text-coffee no-underline">
+                        Pelajari lebih lanjut <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                <!-- Arabica -->
+                <article
+                    class="flex min-h-[260px] flex-col items-start border border-line bg-[#f7f5ed] p-6 max-[760px]:min-h-[230px]">
+                    <div class="mb-[27px] flex w-full items-center justify-between">
+                        <img src="../image/arabika.jpg" alt="Foto kopi Arabica"
+                            class="size-12 rounded-full object-cover">
+                        <span class="text-[9px] uppercase tracking-[0.12em] text-[#827568]">Nusantara</span>
+                    </div>
+                    <h3 class="mb-2 font-serif text-[24px] font-medium">Arabica</h3>
+                    <p class="mb-[19px] max-w-[260px] text-[11px] leading-[1.75] text-muted">
+                        Rasa lembut, aroma kompleks, dan keasaman seimbang untuk dinikmati.
+                    </p>
+                    <a href="#kontak" aria-label="Tanya tentang kopi Arabica"
+                        class="mt-auto flex w-full justify-between border-t border-[rgba(92,72,52,0.18)] pt-3 text-[10px] font-semibold text-coffee no-underline">
+                        Pelajari lebih lanjut <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="kontak"
+            class="flex items-center justify-between gap-6 bg-coffee-dark px-[clamp(22px,10vw,150px)] py-14 text-white max-[760px]:flex-col max-[760px]:items-start max-[760px]:py-[45px]">
+            <div>
+                <p class="mb-3 flex items-center gap-[9px] text-[10px] font-bold uppercase tracking-[0.16em] text-[#d7b694]">
+                    Ada cerita yang ingin dibagi?
+                </p>
+                <h2 class="font-serif text-[clamp(30px,4vw,43px)] font-medium leading-[1.2] tracking-[-0.045em]">
+                    Secangkir kopi selalu
+                    <br>
+                    punya awal yang baik.
+                </h2>
+            </div>
+            <a href="mailto:halo@kopinusantara.id"
+                class="inline-flex shrink-0 items-center justify-center gap-3.5 rounded-[3px] border border-[#e3d2be] bg-transparent px-[19px] py-[13px] text-[12px] font-semibold tracking-[0.02em] text-[#fffaf3] no-underline transition duration-200 hover:bg-white/10">
+                Hubungi kami <span aria-hidden="true">↗</span>
+            </a>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <a class="brand" href="#beranda"><span class="brand-mark" aria-hidden="true">☕</span><span>Kopi
-                <strong>Nusantara</strong></span></a>
-        <p>Merayakan kopi Indonesia, satu cangkir pada satu waktu.</p>
-        <span>© 2026 Kopi Nusantara</span>
+    <!-- FOOTER -->
+    <footer
+        class="flex items-center justify-between gap-5 px-[clamp(22px,7vw,108px)] py-6 text-[#83796e] max-[760px]:flex-wrap">
+        <a href="#beranda"
+            class="inline-flex items-center gap-2.5 whitespace-nowrap text-[16px] tracking-[-0.04em] text-ink no-underline">
+            <span class="grid size-[37px] place-items-center rounded-full bg-[#ede4d7] text-[18px]" aria-hidden="true">
+                ☕
+            </span>
+            <span>
+                Kopi <strong class="font-bold">Nusantara</strong>
+            </span>
+        </a>
+        <p class="text-[10px] max-[760px]:order-3 max-[760px]:w-full">
+            Merayakan kopi Indonesia, satu cangkir pada satu waktu.
+        </p>
+        <span class="text-[10px]">© 2026 Kopi Nusantara</span>
     </footer>
+
 </body>
 
 </html>
