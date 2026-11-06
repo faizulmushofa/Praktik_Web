@@ -12,9 +12,9 @@ class ProductModel
         $this->filePath = $filePath ?? __DIR__ . '/../data/products.json';
     }
 
-  
-      @return Product[]
-     
+    /**
+     * @return Product[]
+     */
     public function getAllProducts(): array
     {
         if (!file_exists($this->filePath)) {
