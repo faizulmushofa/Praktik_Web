@@ -1,84 +1,58 @@
-# Praktik Pemrograman Web — Kopi Nusantara
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Repository praktikum mata kuliah Pemrograman Web. Landing page Kopi Nusantara menggunakan Tailwind CSS v4 CLI dan PHP.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
----
+## About Laravel
 
-## Prasyarat
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Node.js](https://nodejs.org/) (versi 18+)
-- [PHP](https://www.php.net/) (versi 8+)
-- [Git](https://git-scm.com/)
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
----
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Cara Menjalankan
+## Learning Laravel
 
-1. **Install dependensi:**
-   ```bash
-   npm install
-   ```
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-2. **Build Tailwind CSS:**
-   ```bash
-   # Sekali build
-   npm run build-css
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-   # Mode watch (auto-rebuild saat ubah file)
-   npm run watch-css
-   ```
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
 
-3. **Jalankan Local PHP Server:**
-   ```bash
-   php -S localhost:8000
-   ```
+## Agentic Development
 
-4. **Buka di browser:**
-   Akses `http://localhost:8000/apps/index.php`.
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
 
----
+```bash
+composer require laravel/boost --dev
 
-## Aturan Alur Kerja Praktikum (`weeks/week-*`)
-
-### 1. Standar Branching
-- Penamaan branch: `weeks/week-<nomor>` (contoh: `weeks/week-3`, `weeks/week-4`, `weeks/week-5`).
-- Branch minggu baru dibuat dari branch minggu sebelumnya:
-  ```bash
-  git checkout weeks/week-4
-  git checkout -b weeks/week-5
-  ```
-- Setiap branch merefleksikan progres materi dan tugas minggu tersebut.
-
-### 2. Konvensi Struktur Folder
-```text
-praktik_web/
-├── apps/
-│   ├── index.php         # Entry point aplikasi
-│   ├── css/
-│   │   └── style.css     # CSS input Tailwind v4 (@theme, fonts, custom style)
-│   ├── js/
-│   │   └── script.js     # Logika klien & inisialisasi icon
-│   ├── data/
-│   │   └── products.json # Data mock/JSON produk
-│   └── dist/
-│       └── output.css    # Hasil compile Tailwind (di-ignore dari Git)
-├── image/                # Aset gambar statis
-├── package.json          # Konfigurasi dependensi & build script
-└── README.md
+php artisan boost:install
 ```
 
-### 3. Aturan Modifikasi File
-- **Class Baru Tailwind**: Jika menambahkan class/elemen baru di file PHP/HTML/JS, wajib jalankan `npm run build-css`.
-- **Aset Gambar**: Simpan file gambar di folder `image/`, referensikan relatif dengan `../image/<nama-file>`.
-- **File Terlarang Masuk Git**: Folder `node_modules/` dan `apps/dist/` wajib tetap di-ignore via `.gitignore`.
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
-### 4. Checklist Commit & Push per Week
-1. Jalankan `npm run build-css` untuk memastikan tidak ada error syntax.
-2. Validasi PHP: `php -l apps/index.php`.
-3. Jalankan server lokal dan verifikasi tampilan di browser.
-4. Stage, commit, dan push:
-   ```bash
-   git add -A
-   git commit -m "feat/refactor: deskripsi perubahan"
-   git push -u origin weeks/week-<nomor>
-   ```
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
