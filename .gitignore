@@ -26,3 +26,5 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 _legacy
+/aistudio_source/
+/public/assets/aistudio/
