@@ -1446,7 +1446,7 @@
             const invoiceGrandTotal = document.getElementById('invoice-grand-total');
             const whatsappLink = document.getElementById('whatsapp-confirm-link');
 
-            shippingForm?.addEventListener('submit', (e) => {
+            shippingForm?.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 if (cart.length === 0) {
                     formErrorMsg.textContent = 'Tambahkan minimal 1 varian kopi ke Nota Pesanan terlebih dahulu.';
@@ -1470,7 +1470,48 @@
 
                 const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
                 const grandTotal = subtotal + shippingCost;
-                const invoiceCode = 'ANM-' + String(Math.floor(1000 + Math.random() * 9000));
+                let invoiceCode = 'ANM-' + String(Math.floor(1000 + Math.random() * 9000));
+
+                try {
+                    const response = await fetch('/api/orders', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            customer_name: name,
+                            customer_phone: phone,
+                            customer_address: address,
+                            customer_postal_code: postalCode,
+                            source: 'beranda',
+                            items: cart.map((item) => ({
+                                name: item.name,
+                                grind: item.grind || null,
+                                weight: item.weight || '200g',
+                                price: Number(item.price),
+                                qty: Number(item.qty),
+                                batch_code: item.batch_code || null,
+                            })),
+                        }),
+                    });
+
+                    if (response.status === 422) {
+                        const errData = await response.json();
+                        const firstError = errData?.errors ? Object.values(errData.errors).flat()[0] : null;
+                        formErrorMsg.textContent = firstError || errData?.message || 'Data pesanan tidak valid.';
+                        formErrorMsg.classList.remove('hidden');
+                        return;
+                    }
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        if (result?.data?.invoice_number) {
+                            invoiceCode = String(result.data.invoice_number).replace(/^#/, '');
+                        }
+                    }
+                } catch (err) {
+                }
 
                 invoiceNumberBadge.textContent = `INVOICE #${invoiceCode}`;
                 invoiceCustName.textContent = name;
