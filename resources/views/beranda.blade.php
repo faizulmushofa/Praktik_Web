@@ -193,6 +193,16 @@
                     </svg>
                 </a>
 
+                <a
+                    href="{{ route('login') }}"
+                    class="hidden sm:inline-flex items-center gap-1.5 border border-[#D8D5CE] bg-white text-[#111111] text-xs font-semibold px-4 py-2.5 rounded-full hover:border-[#111111] hover:bg-[#F7F6F2] transition whitespace-nowrap shrink-0"
+                >
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/>
+                    </svg>
+                    <span>Masuk</span>
+                </a>
+
                 <button
                     type="button"
                     id="mobile-menu-toggle"
@@ -220,6 +230,13 @@
                     {{ $link['label'] }}
                 </a>
             @endforeach
+            <a
+                href="{{ route('login') }}"
+                data-mobile-nav-link
+                class="block px-3 py-2 rounded-lg text-xs font-bold text-[#111111] bg-white border border-[#E5E5E3] hover:bg-[#FAF9F6] transition"
+            >
+                Masuk / Daftar
+            </a>
         </div>
     </header>
 
